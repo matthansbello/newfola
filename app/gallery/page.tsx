@@ -19,7 +19,7 @@ const showcaseGrid: ShowcaseItem[] = [
     src: "/project1.jpg",
     alt: "Leading women in music gathering",
     tag: "Music",
-    href: "/projects/7",
+    href: "/gallery/7",
     metaOverlay: {
       type: "TYPE: VIDEO EDITING",
       date: "DATE: MARCH / 2026",
@@ -30,7 +30,7 @@ const showcaseGrid: ShowcaseItem[] = [
     src: "/project2.png",
     alt: "BNXN x Red Bull",
     tag: "Video Ad",
-    href: "/projects/3",
+    href: "/gallery/3",
     metaOverlay: {
       type: "TYPE: VIDEO EDITING",
       date: "DATE: MARCH / 2026",
@@ -41,7 +41,7 @@ const showcaseGrid: ShowcaseItem[] = [
     src: "/project3.png",
     alt: "Outdoor event by the pool",
     tag: "Music",
-    href: "/projects/4",
+    href: "/gallery/4",
     metaOverlay: {
       type: "TYPE: VIDEO EDITING",
       date: "DATE: MARCH / 2026",
@@ -52,7 +52,7 @@ const showcaseGrid: ShowcaseItem[] = [
     src: "/project2.jpg",
     alt: "Fatherland at Cannes",
     tag: "Video Ad",
-    href: "/projects/5",
+    href: "/gallery/5",
     metaOverlay: {
       type: "TYPE: VIDEO EDITING",
       date: "DATE: MARCH / 2026",
@@ -194,7 +194,7 @@ const Projects = () => {
             <div className="flex flex-col gap-10 font-normal lg:flex-row lg:items-start lg:justify-between lg:gap-16">
               <div className="shrink-0 lg:w-[28%]">
                 <h1 className="m-0 font-inter text-[24px] font-normal leading-tight text-[#00000099]">
-                  Projects
+                  Gallery
                 </h1>
               </div>
               <div className="min-w-0 flex-1 lg:max-w-[72%]">

@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 
 const indexLinks = [
   { label: "Home", href: "/" },
-  { label: "Works", href: "/projects" },
+  { label: "Gallery", href: "/gallery" },
   { label: "About", href: "/about" },
 ] as const;
 
