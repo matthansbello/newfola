@@ -293,10 +293,10 @@ export default function Header() {
                   (ENQUIRES)
                 </p>
                 <a
-                  href="mailto:hello@wewantfola.com"
+                  href="mailto:hello@folapr.com"
                   className={`flex items-center gap-4 break-all font-inter text-xs font-normal uppercase tracking-[0.08em] no-underline transition-opacity hover:opacity-70 ${editorialLink} justify-between`}
                 >
-                  hello@wewantfola.com
+                  hello@folapr.com
                   <svg
                     width="15"
                     height="15"

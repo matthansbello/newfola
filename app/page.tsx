@@ -124,22 +124,22 @@ const Index = () => {
                     transition={{ duration: 0.6 }}
                     className="text-white"
                   >
-                    <span className="lg:flex hidden flex-col items-center gap-1 lg:gap-2">
+                    <span className="hidden lg:flex flex-col items-center gap-1 lg:gap-2">
                       <FadingText
                         text="Elevating African Creativity"
                         style="scale"
-                        className="apris text-[1.65rem] font-medium leading-[1.12] tracking-[-0.04em] text-white sm:text-4xl md:text-5xl lg:text-[3rem] lg:leading-[1.08] xl:text-[50px]"
+                        className="apris text-[1.65rem] font-normal leading-[1.12] tracking-[-0.04em] text-white sm:text-4xl md:text-5xl lg:text-[3rem] lg:leading-[1.08] xl:text-[50px]"
                       />
                       <FadingText
                         text="to the Global Stage."
                         style="scale"
-                        className="apris text-[1.65rem] font-medium leading-[1.12] tracking-[-0.04em] text-white sm:text-4xl md:text-5xl lg:text-[3rem] lg:leading-[1.08] xl:text-[50px]"
+                        className="apris text-[1.65rem] font-normal leading-[1.12] tracking-[-0.04em] text-white sm:text-4xl md:text-5xl lg:text-[3rem] lg:leading-[1.08] xl:text-[50px]"
                       />
                     </span>
-                    <span className="lg:hidden flex">
-                      <p className="apris text-left text-[2rem] font-medium leading-[1.12] tracking-[-0.04em] text-white sm:text-4xl">
+                    <span className="flex lg:hidden w-full justify-start sm:justify-center">
+                      <span className="apris block text-left text-[2rem] font-normal leading-[1.12] tracking-[-0.04em] text-white sm:text-4xl">
                         Elevating African <br /> Creativity to the Global <br /> Stage.
-                      </p>
+                      </span>
                     </span>
                   </motion.h1>
                 </AnimatePresence>
