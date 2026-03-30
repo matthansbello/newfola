@@ -1,0 +1,272 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  background: white;
+  font-family: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+}
+
+/* Hide scrollbar globally */
+::-webkit-scrollbar {
+  display: none;
+}
+
+html,
+body {
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* IE and Edge */
+}
+
+/* image popup */
+img.mfp-img {
+  box-shadow: 0 0 8px rgb(0 0 0 / 60%);
+  position: absolute;
+  max-height: 392px;
+  padding: 0 !important;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.mfp-img-container .mfp-content {
+  max-width: 400px !important;
+}
+.mfp-img-container .mfp-close {
+  top: -110px;
+  right: -24px;
+}
+
+@font-face {
+  font-family: "Druk";
+  src: url("/Druk-XCondSuper.otf") format("opentype"); /* fixed path + format */
+  font-style: normal;
+  font-weight: normal;
+}
+
+@font-face {
+  font-family: "DrukTrial";
+  src: url("/Druk-XCondSuper.otf") format("opentype");
+  font-style: 500;
+  font-weight: normal;
+}
+
+@font-face {
+  font-family: "Portrait";
+  src: url("/Portrait-Light.otf") format("opentype");
+  font-weight: 300; /* 'light' is not valid */
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Portrait";
+  src: url("/Portrait-Medium.otf") format("opentype");
+  font-weight: 500; /* use numeric weight */
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Portrait";
+  src: url("/Portrait-LightItalic.otf") format("opentype");
+  font-weight: 300;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: "Playfair";
+  src: url("/Playfair-VariableFont_opsz,wdth,wght.ttf") format("opentype");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "CanelaCondensed";
+  src: url("/CanelaCondensed-Regular-Trial.otf") format("opentype");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "CanelaCondensed";
+  src: url("/CanelaCondensed-RegularItalic-Trial.otf") format("opentype");
+  font-weight: 400;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: "CanelaCondensed";
+  src: url("/CanelaCondensed-Bold-Trial.otf") format("opentype");
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "CanelaCondensed";
+  src: url("/CanelaCondensed-BoldItalic-Trial.otf") format("opentype");
+  font-weight: 700;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: "CanelaCondensed";
+  src: url("/CanelaCondensed-Medium-Trial.otf") format("opentype");
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "CanelaCondensed";
+  src: url("/CanelaCondensed-MediumItalic-Trial.otf") format("opentype");
+  font-weight: 500;
+  font-style: italic;
+}
+
+/* Apris (local) */
+@font-face {
+  font-family: "Apris";
+  src: url("/apris/AprisTrial-Thin.otf") format("opentype");
+  font-weight: 100;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Apris";
+  src: url("/apris/AprisTrial-ThinItalic.otf") format("opentype");
+  font-weight: 100;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Apris";
+  src: url("/apris/AprisTrial-Light.otf") format("opentype");
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Apris";
+  src: url("/apris/AprisTrial-LightItalic.otf") format("opentype");
+  font-weight: 300;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Apris";
+  src: url("/apris/AprisTrial-Regular.otf") format("opentype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Apris";
+  src: url("/apris/AprisTrial-RegularItalic.otf") format("opentype");
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Apris";
+  src: url("/apris/AprisTrial-Medium.otf") format("opentype");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Apris";
+  src: url("/apris/AprisTrial-MediumItalic.otf") format("opentype");
+  font-weight: 500;
+  font-style: italic;
+  font-display: swap;
+}
+
+/* Utility classes */
+.druk {
+  font-family: "Druk", sans-serif;
+}
+
+.portrait {
+  font-family: "Portrait", sans-serif;
+}
+
+.playfair {
+  font-family: "Playfair", sans-serif;
+}
+
+.inter {
+  font-family: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+}
+
+.canela {
+  font-family: "CanelaCondensed";
+}
+
+.apris {
+  font-family: "Apris", serif;
+}
+
+.drukTrial {
+  font-family: "DrukTrial", sans-serif;
+}
+
+@keyframes zoomSlow {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(1.2);
+  }
+}
+
+.zoom-slow {
+  animation: zoomSlow 20s ease-in-out infinite alternate;
+}
+
+.menuToggle {
+  width: 30px;
+  height: 22px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  cursor: pointer;
+  background: transparent;
+  border: none;
+  transition: all 0.3s ease;
+  z-index: 999;
+}
+
+.bar {
+  height: 2px;
+  width: 100%;
+  border-radius: 2px;
+  transition: all 0.3s ease;
+}
+
+/* color variants controlled via class */
+.bar-white {
+  background-color: white;
+}
+
+.bar-black {
+  background-color: black;
+}
+
+/* animation */
+.menuToggle.open span:nth-child(1) {
+  transform: rotate(45deg) translateY(8px);
+}
+
+.menuToggle.open span:nth-child(2) {
+  opacity: 0;
+}
+
+.menuToggle.open span:nth-child(3) {
+  transform: rotate(-45deg) translateY(-8px);
+}
+
+
