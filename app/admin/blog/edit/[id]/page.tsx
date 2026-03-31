@@ -6,6 +6,7 @@ import { doc, getDoc, updateDoc, serverTimestamp } from "firebase/firestore";
 import { db } from "@/lib/firebase";
 import RichTextEditor from "@/components/admin/RichTextEditor";
 import ImageUploader from "@/components/admin/ImageUploader";
+import MultiImageUploader from "@/components/admin/MultiImageUploader";
 
 export default function EditBlogPost() {
   const router = useRouter();
@@ -16,6 +17,7 @@ export default function EditBlogPost() {
   const [excerpt, setExcerpt] = useState("");
   const [content, setContent] = useState("");
   const [coverImage, setCoverImage] = useState("");
+  const [galleryImages, setGalleryImages] = useState<string[]>([]);
   const [loading, setLoading] = useState(false);
   const [fetching, setFetching] = useState(true);
 
@@ -32,6 +34,7 @@ export default function EditBlogPost() {
           setExcerpt(data.excerpt || "");
           setContent(data.content || "");
           setCoverImage(data.coverImage || "");
+          setGalleryImages(data.galleryImages || []);
         } else {
           alert("No such document!");
           router.push("/admin/blog");
@@ -61,6 +64,7 @@ export default function EditBlogPost() {
         excerpt,
         content,
         coverImage,
+        galleryImages,
         published,
         updatedAt: serverTimestamp(),
       });
@@ -141,6 +145,10 @@ export default function EditBlogPost() {
           ) : (
             <ImageUploader onUploadSuccess={setCoverImage} buttonText="Upload Cover Photo" />
           )}
+        </div>
+
+        <div>
+           <MultiImageUploader images={galleryImages} onChange={setGalleryImages} />
         </div>
 
         <div>

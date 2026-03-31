@@ -6,6 +6,7 @@ import { collection, addDoc, serverTimestamp } from "firebase/firestore";
 import { db } from "@/lib/firebase";
 import RichTextEditor from "@/components/admin/RichTextEditor";
 import ImageUploader from "@/components/admin/ImageUploader";
+import MultiImageUploader from "@/components/admin/MultiImageUploader";
 
 export default function NewBlogPost() {
   const router = useRouter();
@@ -13,6 +14,7 @@ export default function NewBlogPost() {
   const [excerpt, setExcerpt] = useState("");
   const [content, setContent] = useState("");
   const [coverImage, setCoverImage] = useState("");
+  const [galleryImages, setGalleryImages] = useState<string[]>([]);
   const [loading, setLoading] = useState(false);
 
   const handleSubmit = async (e: React.FormEvent, published: boolean) => {
@@ -29,6 +31,7 @@ export default function NewBlogPost() {
         excerpt,
         content,
         coverImage,
+        galleryImages,
         published,
         createdAt: serverTimestamp(),
       });
@@ -105,6 +108,10 @@ export default function NewBlogPost() {
           ) : (
             <ImageUploader onUploadSuccess={setCoverImage} buttonText="Upload Cover Photo" />
           )}
+        </div>
+
+        <div>
+           <MultiImageUploader images={galleryImages} onChange={setGalleryImages} />
         </div>
 
         <div>
