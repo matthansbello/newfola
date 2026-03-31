@@ -1,50 +1,19 @@
 "use client";
 
-import { useState, useEffect } from "react";
-import { useRouter, useParams } from "next/navigation";
-import { doc, getDoc, updateDoc, serverTimestamp } from "firebase/firestore";
+import { useState } from "react";
+import { useRouter } from "next/navigation";
+import { collection, addDoc, serverTimestamp } from "firebase/firestore";
 import { db } from "@/lib/firebase";
 import RichTextEditor from "@/components/admin/RichTextEditor";
 import ImageUploader from "@/components/admin/ImageUploader";
 
-export default function EditBlogPost() {
+export default function NewBlogPost() {
   const router = useRouter();
-  const params = useParams();
-  const id = params?.id as string;
-
   const [title, setTitle] = useState("");
   const [excerpt, setExcerpt] = useState("");
   const [content, setContent] = useState("");
   const [coverImage, setCoverImage] = useState("");
   const [loading, setLoading] = useState(false);
-  const [fetching, setFetching] = useState(true);
-
-  useEffect(() => {
-    async function fetchPost() {
-      if (!id) return;
-      try {
-        const docRef = doc(db, "blogs", id);
-        const docSnap = await getDoc(docRef);
-
-        if (docSnap.exists()) {
-          const data = docSnap.data();
-          setTitle(data.title || "");
-          setExcerpt(data.excerpt || "");
-          setContent(data.content || "");
-          setCoverImage(data.coverImage || "");
-        } else {
-          alert("No such document!");
-          router.push("/admin/blog");
-        }
-      } catch (error) {
-        console.error("Error fetching document:", error);
-      } finally {
-        setFetching(false);
-      }
-    }
-
-    fetchPost();
-  }, [id, router]);
 
   const handleSubmit = async (e: React.FormEvent, published: boolean) => {
     e.preventDefault();
@@ -53,37 +22,32 @@ export default function EditBlogPost() {
     setLoading(true);
     try {
       const slug = title.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)+/g, '');
-      const docRef = doc(db, "blogs", id);
-
-      await updateDoc(docRef, {
+      
+      await addDoc(collection(db, "blogs"), {
         title,
         slug,
         excerpt,
         content,
         coverImage,
         published,
-        updatedAt: serverTimestamp(),
+        createdAt: serverTimestamp(),
       });
       
       router.push("/admin/blog");
     } catch (error) {
-      console.error("Error updating post:", error);
-      alert("Failed to update post. Check console.");
+      console.error("Error creating post:", error);
+      alert("Failed to create post. Check console.");
     } finally {
       setLoading(false);
     }
   };
 
-  if (fetching) {
-    return <div className="py-20 text-center uppercase tracking-widest text-sm text-black/50">Loading editor...</div>;
-  }
-
   return (
     <div className="max-w-4xl mx-auto pb-20">
       <div className="mb-10 border-b border-black/10 pb-4 flex justify-between items-center">
         <div>
-          <h1 className="apris text-5xl text-black">Edit Post</h1>
-          <p className="text-black/60 mt-2 font-inter">Update your story for the Fola PR blog.</p>
+          <h1 className="apris text-5xl text-black">New Post</h1>
+          <p className="text-black/60 mt-2 font-inter">Craft a new story for the Fola PR blog.</p>
         </div>
         <div className="flex gap-3">
           <button
@@ -91,14 +55,14 @@ export default function EditBlogPost() {
             disabled={loading}
             className="px-6 py-2 border border-black/20 rounded font-medium uppercase tracking-wider text-xs hover:bg-black/5"
           >
-            Save as Draft
+            Save Draft
           </button>
           <button
             onClick={(e) => handleSubmit(e, true)}
             disabled={loading}
             className="px-6 py-2 bg-black text-[#EFE4DB] rounded font-medium uppercase tracking-wider text-xs hover:opacity-80"
           >
-            {loading ? "Saving..." : "Update & Publish"}
+            {loading ? "Saving..." : "Publish"}
           </button>
         </div>
       </div>

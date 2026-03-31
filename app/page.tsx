@@ -1,159 +1,47 @@
 "use client";
 
-import { useState, useEffect } from "react";
-import { AnimatePresence } from "framer-motion";
-import { Swiper, SwiperSlide } from "swiper/react";
 import Layout from "@/components/Layout";
-import { home1SliderProps } from "@/lib/sliderProps";
-import { motion } from "framer-motion";
-import FadingText from "@/components/FadingText";
-import HomeContent from "@/components/HomeContent";
-
-type HeroSlide = {
-  id: number;
-  /** Shown from `lg` breakpoint and up */
-  image: string;
-  /** Optional — shown below `lg`; falls back to `image` when omitted */
-  imageMobile?: string;
-  color: string;
-};
-
-const heroSlides: HeroSlide[] = [
-  {
-    id: 0,
-    image: "newBg.png",
-    imageMobile: "newBgMob.png",
-    color: "dark",
-  },
-  {
-    id: 1,
-    image: "assets/images/home/FOLA-home-6.webp",
-    color: "white",
-  },
-  {
-    id: 4,
-    image: "assets/images/home/FOLA-home-7.webp",
-    color: "white",
-  },
-  {
-    id: 2,
-    image: "assets/images/home/FOLA-home-5.webp",
-    color: "white",
-  },
-  {
-    id: 3,
-    image: "assets/images/home/FOLA-home-4.webp",
-    color: "white",
-  },
-];
+import Image from "next/image";
 
 const Index = () => {
-  const [showPreloader, setShowPreloader] = useState(false);
-
-  // useEffect(() => {
-  //   // Show preloader for 15 seconds, then hide
-  //   const timer = setTimeout(() => {
-  //     setShowPreloader(false);
-  //   }, 15000);
-
-  //   return () => clearTimeout(timer);
-  // }, []);
-
   return (
-    <>
-      {/* Preloader */}
-      {/* {showPreloader && (
-        <HomeContent onComplete={() => setShowPreloader(false)} />
-      )} */}
+    <Layout>
+      <main className="min-h-screen bg-white text-black">
+        <div className="mx-auto grid min-h-screen max-w-[1800px] grid-cols-1 lg:grid-cols-2">
+          <section className="relative flex min-h-[55vh] flex-col justify-between px-6 pb-10 pt-24 sm:px-10 sm:pb-12 sm:pt-28 lg:min-h-screen lg:px-14 lg:pb-14 lg:pt-28">
+            <div className="max-w-[560px]">
+              <h1 className="m-0 apris text-[clamp(2.1rem,5.2vw,3.8rem)] font-light leading-[120%] tracking-[-0.03em] text-black">
+                <span className="text-black/35">Elevating</span>
+                <br />
+                African Creativity
+                <br />
+                <span className="text-black/55">to the </span> Global Stage.
+              </h1>
 
-      {/* Main Home Page Content */}
-      {/* {!showPreloader && ( */}
-      <>
-        <Layout>
-          <div className="relative h-screen min-h-screen overflow-hidden bg-black no-scrollbar">
-            <Swiper
-              {...home1SliderProps}
-              className="hero-main-slider absolute inset-0 z-0 h-full w-full"
-            >
-              {heroSlides.map((slide, index) => (
-                <SwiperSlide key={slide.id} className="relative">
-                  {slide.imageMobile ? (
-                    <>
-                      <div
-                        className="absolute inset-0 z-0 bg-cover bg-center zoom-slow lg:hidden"
-                        style={{
-                          backgroundImage: `url(${slide.imageMobile})`,
-                        }}
-                      />
-                      <div
-                        className="absolute inset-0 z-0 hidden bg-cover bg-center zoom-slow lg:block"
-                        style={{
-                          backgroundImage: `url(${slide.image})`,
-                        }}
-                      />
-                    </>
-                  ) : (
-                    <div
-                      className="absolute inset-0 z-0 bg-cover bg-center zoom-slow"
-                      style={{
-                        backgroundImage: `url(${slide.image})`,
-                      }}
-                    />
-                  )}
-                  <div className="absolute inset-0 z-10 bg-gradient-to-t from-[#000000] via-[#000000]/40 to-transparent" />
-
-                  <div className="slide-titles">
-                    <div className="w-full flex justify-center items-center" />
-                  </div>
-                </SwiperSlide>
-              ))}
-            </Swiper>
-
-            <div className="pointer-events-none absolute inset-0 z-30 flex flex-col justify-end px-4 pb-4 sm:px-4 sm:pb-10 lg:px-12 lg:pb-14 xl:px-16">
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 1.1, ease: "easeOut", delay: 0.15 }}
-                className="pointer-events-none mx-auto w-full max-w-5xl text-center"
-              >
-                <AnimatePresence mode="wait">
-                  <motion.h1
-                    initial={{ y: 16, opacity: 0 }}
-                    animate={{ y: 0, opacity: 1 }}
-                    exit={{ y: -16, opacity: 0 }}
-                    transition={{ duration: 0.6 }}
-                    className="text-white"
-                  >
-                    <span className="hidden lg:flex flex-col items-center gap-1 lg:gap-2">
-                      <FadingText
-                        text="Elevating African Creativity"
-                        style="scale"
-                        className="apris text-[1.65rem] font-normal leading-[1.12] tracking-[-0.04em] text-white sm:text-4xl md:text-5xl lg:text-[3rem] lg:leading-[1.08] xl:text-[50px]"
-                      />
-                      <FadingText
-                        text="to the Global Stage."
-                        style="scale"
-                        className="apris text-[1.65rem] font-normal leading-[1.12] tracking-[-0.04em] text-white sm:text-4xl md:text-5xl lg:text-[3rem] lg:leading-[1.08] xl:text-[50px]"
-                      />
-                    </span>
-                    <span className="flex lg:hidden w-full justify-start sm:justify-center">
-                      <span className="apris block text-left text-[2rem] font-normal leading-[1.12] tracking-[-0.04em] text-white sm:text-4xl">
-                        Elevating African <br /> Creativity to the Global <br /> Stage.
-                      </span>
-                    </span>
-                  </motion.h1>
-                </AnimatePresence>
-
-                <p className="mt-2 font-inter text-[10px] font-normal uppercase tracking-[0.28em] text-[#EFE4DBCC] sm:text-[12px] lg:mt-5">
-                  Lagos — London — New York
-                </p>
-              </motion.div>
+              <p className="mt-6 max-w-[420px] font-inter text-[13px] leading-[1.55] text-black/70 sm:text-[20px]">
+                We are a full-service communications and experiential agency
+                with a global footprint in Lagos, London, and New York.
+              </p>
             </div>
-          </div>
-        </Layout>
-      </>
-      {/* // )} */}
-    </>
+
+            <div className="pointer-events-none select-none">
+              <img src="/folaG.svg" alt="" />
+            </div>
+          </section>
+
+          <section className="relative min-h-[45vh] lg:min-h-screen">
+            <Image
+              src="/newHome.png"
+              alt="FOLA PR"
+              fill
+              priority
+              className="object-cover object-center"
+              sizes="(max-width: 960px) 100vw, 50vw"
+            />
+          </section>
+        </div>
+      </main>
+    </Layout>
   );
 };
 

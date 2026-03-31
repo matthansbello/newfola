@@ -169,7 +169,21 @@ img.mfp-img {
   font-display: swap;
 }
 
+@font-face {
+  font-family: "Apris";
+  src: url("/apris/AprisTrial-Medium.otf") format("opentype");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
 
+@font-face {
+  font-family: "Apris";
+  src: url("/apris/AprisTrial-MediumItalic.otf") format("opentype");
+  font-weight: 500;
+  font-style: italic;
+  font-display: swap;
+}
 
 /* Utility classes */
 .druk {

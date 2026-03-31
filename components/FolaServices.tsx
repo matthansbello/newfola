@@ -40,7 +40,7 @@ const FolaServices: React.FC = () => {
           <div className="lg:w-[55%] flex flex-col items-start gap-[100px]">
             <div className="flex flex-col lg:flex-row justify-start items-start gap-[30px] lg:gap-[65px]">
               <FadingText>
-                <h2 className="apris text-[40px] font-normal italic leading-[34px] text-black whitespace-nowrap lg:text-[62px] lg:leading-[62px]">
+                <h2 className="apris text-[40px] font-medium italic leading-[34px] text-black whitespace-nowrap lg:text-[62px] lg:leading-[62px]">
                   FOLA PR
                 </h2>
               </FadingText>
@@ -130,7 +130,7 @@ const FolaServices: React.FC = () => {
           <div className="lg:w-[55%] flex flex-col items-start gap-6 lg:gap-8">
             <div className="flex flex-col lg:flex-row justify-start items-start gap-4 lg:gap-6">
               <FadingText>
-                <h2 className="apris text-[40px] font-normal italic leading-[1.1] tracking-[-0.02em] text-black whitespace-nowrap lg:text-[62px] lg:leading-[86px]">
+                <h2 className="apris text-[40px] font-medium italic leading-[1.1] tracking-[-0.02em] text-black whitespace-nowrap lg:text-[62px] lg:leading-[86px]">
                   Studio FOLA
                 </h2>
               </FadingText>

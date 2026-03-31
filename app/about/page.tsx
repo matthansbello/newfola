@@ -35,7 +35,7 @@ const About = () => {
 
   return (
     <Layout>
-      <div className="min-h-screen w-full max-w-screen overflow-x-hidden bg-[#EFE4DB] pt-[200px] lg:pt-[320px]">
+      <div className="min-h-screen w-full max-w-screen overflow-x-hidden bg-[#EFE4DB] pt-[140px] lg:pt-[220px]">
         {/* Hero */}
         <motion.section
           className="mx-auto max-w-[1800px] px-4 pb-12 text-black sm:px-8 sm:pb-16 lg:px-10 lg:pb-20"
@@ -156,7 +156,7 @@ const About = () => {
               variants={fadeInUp}
               className={`${labelClass} text-2xl lg:col-span-2 lg:whitespace-nowrap lg:pt-0.5`}
             >
-              ( The Team )
+              ( The CEO )
             </motion.p>
             <div className="flex w-full min-w-0 flex-col gap-8 lg:col-span-6 lg:flex-row lg:items-start lg:justify-between lg:gap-[85px]">
               <motion.div variants={fadeInUp} className="w-full lg:w-auto">

@@ -91,7 +91,7 @@ export default function Footer() {
                 Business Inquiries
               </p>
               <a
-                href="mailto:hello@folpr.com"
+                href="mailto:hello@folapr.com"
                 className="mt-2 inline-block max-w-full break-all font-inter text-[17px] leading-snug text-[#F4F1EA] no-underline transition-opacity hover:opacity-70 sm:mt-3 sm:break-normal sm:text-[19px] md:text-[20px] md:leading-[1.3]"
               >
                 hello@folapr.com

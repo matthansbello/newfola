@@ -28,9 +28,31 @@ const FadingText: React.FC<FadingTextProps> = ({
 }) => {
   const ref = useRef(null);
   const isInView = useInView(ref, { margin: "-10% 0px", once });
+  const [displayedText, setDisplayedText] = useState("");
+  const [hasAnimated, setHasAnimated] = useState(false);
+
   const isStringChild = typeof children === "string";
   const fullText =
     text || (isStringChild ? (children as string) : undefined) || "";
+
+  useEffect(() => {
+    if (isInView && !hasAnimated && fullText) {
+      const timer = setTimeout(() => {
+        let i = 0;
+        setDisplayedText("");
+        const interval = setInterval(() => {
+          setDisplayedText(fullText.slice(0, i + 1));
+          i++;
+          if (i >= fullText.length) {
+            clearInterval(interval);
+            setHasAnimated(true);
+          }
+        }, 50);
+      }, delay * 1000); // 👈 Apply delay before typing starts
+
+      return () => clearTimeout(timer);
+    }
+  }, [isInView, fullText, hasAnimated, delay]);
 
   const getVariant = () => {
     switch (style) {
@@ -84,11 +106,11 @@ const FadingText: React.FC<FadingTextProps> = ({
       style={{ display: "inline-block", ...(fontFamily ? { fontFamily } : {}) }}
     >
       {fullText
-        ? fullText.split("").map((char, i) => (
+        ? displayedText.split("").map((char, i) => (
             <motion.span
               key={i}
               initial={variant.initial}
-              animate={isInView ? variant.animate : variant.initial}
+              animate={hasAnimated ? variant.animate : variant.initial}
               transition={{
                 duration: variant.transition?.duration || 0.4,
                 ease: (variant.transition?.ease as any) || "easeOut",

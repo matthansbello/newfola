@@ -64,7 +64,7 @@ export default function ProjectDetails() {
       {project && (
         <div className="bg-black text-white pb-[70px] lg:pb-[140px]">
           <div className="container mx-auto">
-            <div className="w-full pt-[200px] lg:pt-[320px]">
+            <div className="w-full pt-[140px] lg:pt-[220px]">
               <Link
                 href="/gallery"
                 className="lg:px-[100px] uppercase font-inter lg:text-lg"

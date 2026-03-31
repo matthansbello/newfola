@@ -178,7 +178,7 @@ const Clients = () => {
     <>
       <Layout>
         <div className="container mx-auto bg-[#EFE4DB]">
-          <div className="flex flex-col items-center justify-between gap-[150px] pt-[240px] lg:flex-row lg:pt-[320px]">
+          <div className="flex flex-col items-center justify-between gap-[150px] pt-[140px] lg:flex-row lg:pt-[220px]">
             <div className="lg:w-[20%] text-black overflow-hidden flex flex-col gap-[60px]">
               <div className="relative pt-3 overflow-hidden lg:overflow-hidden">
                 <motion.h1
