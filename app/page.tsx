@@ -7,7 +7,6 @@ import { useState, useEffect } from "react";
 const HOME_IMAGES = [
   "/fola-home2.webp",
   "/fola-home1.webp",
-  "/AndreaIyamah/WeWantFola-Project-Andrea1.webp",
   "/kenny/kenny-by-folapr6.jpg",
   "/AndreaIyamah/WeWantFola-Project-Andrea5.webp",
   "/LVI/Leading-Vibes-with-FOLAPR6.jpg",
