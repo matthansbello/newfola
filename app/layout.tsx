@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import "@/styles/globals.css";
 // app/layout.tsx
 import { druk, portrait, canela, inter, playfair } from "../lib/fonts";
+import CookieBanner from "@/components/CookieBanner";
 
 export const metadata: Metadata = {
   title: "FOLA PR",
@@ -113,6 +114,7 @@ export default function RootLayout({
       >
         <div className="cursor "></div>
         {children}
+        <CookieBanner />
       </body>
     </html>
   );

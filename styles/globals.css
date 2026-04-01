@@ -7,6 +7,19 @@ body {
   font-family: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
 }
 
+/* ─── Global link hover effect ──────────────────────────────────────────── */
+a {
+  transition: color 0.2s ease, text-decoration-color 0.2s ease;
+  text-decoration-color: transparent;
+}
+
+a:hover {
+  color: #C8A882 !important;
+  text-decoration: underline;
+  text-decoration-color: #C8A882;
+  text-underline-offset: 3px;
+}
+
 /* Hide scrollbar globally */
 ::-webkit-scrollbar {
   display: none;

@@ -63,7 +63,7 @@ export default function NewBlogPost() {
           <button
             onClick={(e) => handleSubmit(e, true)}
             disabled={loading}
-            className="px-6 py-2 bg-black text-[#EFE4DB] rounded font-medium uppercase tracking-wider text-xs hover:opacity-80"
+            className="px-6 py-2 border-2 border-black text-black rounded font-medium uppercase tracking-wider text-xs hover:bg-black/10"
           >
             {loading ? "Saving..." : "Publish"}
           </button>

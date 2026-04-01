@@ -58,7 +58,7 @@ export default function AdminBlogDashboard() {
         </div>
         <Link
           href="/admin/blog/new"
-          className="bg-black text-[#EFE4DB] px-6 py-3 rounded-md font-medium uppercase tracking-[0.1em] text-sm hover:opacity-80 transition-opacity"
+          className="border-2 border-black text-black px-6 py-3 rounded-md font-medium uppercase tracking-[0.1em] text-sm hover:bg-black/10 transition-colors"
         >
           Create New Post
         </Link>
