@@ -6,6 +6,7 @@ import Link from "next/link";
 import { signInWithEmailAndPassword } from "firebase/auth";
 import { auth } from "@/lib/firebase";
 import { isAllowedEmail } from "@/lib/auth-context";
+import { adminInputClass, adminLabelClass } from "@/components/admin/form-classes";
 
 export default function AdminLoginPage() {
   const router = useRouter();
@@ -43,21 +44,24 @@ export default function AdminLoginPage() {
   };
 
   return (
-    <div className="min-h-screen bg-[#EFE4DB] flex items-center justify-center px-4">
+    <div className="min-h-screen bg-gradient-to-b from-[#f7efe6] to-[#EFE4DB] flex items-center justify-center px-4 py-12">
       <div className="w-full max-w-md">
-        {/* Logo / Brand */}
-        <div className="text-center mb-10">
-          <h1 className="apris text-5xl text-black mb-2">Fola PR</h1>
-          <p className="text-black/50 text-sm uppercase tracking-widest">Admin Portal</p>
+        <div className="mb-8 text-center">
+          <h1 className="apris mb-2 text-4xl text-neutral-900 sm:text-5xl">Fola PR</h1>
+          <p className="text-sm font-medium uppercase tracking-[0.2em] text-neutral-600">
+            Admin Portal
+          </p>
         </div>
 
-        <div className="bg-white/60 backdrop-blur-sm border border-black/8 rounded-2xl p-8 shadow-sm">
-          <h2 className="text-xl font-semibold text-black mb-1">Sign In</h2>
-          <p className="text-black/50 text-sm mb-6">Welcome back. Enter your credentials to continue.</p>
+        <div className="rounded-2xl border border-black/10 bg-white p-8 shadow-lg shadow-black/5">
+          <h2 className="text-xl font-semibold text-neutral-900">Sign In</h2>
+          <p className="mt-1 text-sm leading-relaxed text-neutral-600">
+            Welcome back. Enter your credentials to continue.
+          </p>
 
-          <form onSubmit={handleSubmit} className="space-y-4">
+          <form onSubmit={handleSubmit} className="mt-6 space-y-5">
             <div>
-              <label htmlFor="login-email" className="block text-xs font-semibold uppercase tracking-widest text-black/60 mb-1.5">
+              <label htmlFor="login-email" className={adminLabelClass}>
                 Email Address
               </label>
               <input
@@ -68,18 +72,18 @@ export default function AdminLoginPage() {
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 placeholder="you@folapr.com"
-                className="w-full bg-white border border-black/10 rounded-lg px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-black/20 placeholder:text-black/30"
+                className={adminInputClass}
               />
             </div>
 
             <div>
-              <div className="flex justify-between items-center mb-1.5">
-                <label htmlFor="login-password" className="block text-xs font-semibold uppercase tracking-widest text-black/60">
+              <div className="mb-2 flex items-center justify-between gap-2">
+                <label htmlFor="login-password" className={`${adminLabelClass} mb-0`}>
                   Password
                 </label>
                 <Link
                   href="/admin/forgot-password"
-                  className="text-xs text-black/50 hover:text-black underline underline-offset-2 transition-colors"
+                  className="text-xs font-medium text-neutral-700 underline underline-offset-2 hover:text-neutral-900"
                 >
                   Forgot password?
                 </Link>
@@ -92,12 +96,12 @@ export default function AdminLoginPage() {
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
                 placeholder="••••••••"
-                className="w-full bg-white border border-black/10 rounded-lg px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-black/20 placeholder:text-black/30"
+                className={adminInputClass}
               />
             </div>
 
             {error && (
-              <p className="text-red-600 text-sm bg-red-50 border border-red-100 rounded-lg px-4 py-3">
+              <p className="rounded-xl border border-red-200 bg-red-50 px-4 py-3 text-sm font-medium text-red-800">
                 {error}
               </p>
             )}
@@ -105,16 +109,19 @@ export default function AdminLoginPage() {
             <button
               type="submit"
               disabled={loading}
-              className="w-full border-2 border-black text-black py-3 rounded-lg font-medium uppercase tracking-[0.1em] text-sm hover:bg-black/10 transition-colors disabled:opacity-50 mt-2"
+              className="mt-2 w-full rounded-xl border-2 border-neutral-900 bg-neutral-900 py-3.5 text-sm font-semibold uppercase tracking-[0.12em] text-[#EFE4DB] transition-colors hover:bg-neutral-800 disabled:opacity-50"
             >
               {loading ? "Signing in…" : "Sign In"}
             </button>
           </form>
         </div>
 
-        <p className="text-center text-black/40 text-sm mt-6">
+        <p className="mt-8 text-center text-sm text-neutral-600">
           Don&apos;t have an account?{" "}
-          <Link href="/admin/register" className="text-black underline underline-offset-2 hover:opacity-70">
+          <Link
+            href="/admin/register"
+            className="font-semibold text-neutral-900 underline underline-offset-2 hover:text-neutral-700"
+          >
             Register
           </Link>
         </p>

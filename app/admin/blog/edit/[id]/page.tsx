@@ -7,6 +7,7 @@ import { db } from "@/lib/firebase";
 import RichTextEditor from "@/components/admin/RichTextEditor";
 import ImageUploader from "@/components/admin/ImageUploader";
 import MultiImageUploader from "@/components/admin/MultiImageUploader";
+import { adminInputClass, adminLabelClass, adminTextareaClass } from "@/components/admin/form-classes";
 
 export default function EditBlogPost() {
   const router = useRouter();
@@ -79,59 +80,67 @@ export default function EditBlogPost() {
   };
 
   if (fetching) {
-    return <div className="py-20 text-center uppercase tracking-widest text-sm text-black/50">Loading editor...</div>;
+    return (
+      <div className="rounded-2xl border border-black/10 bg-white/80 py-20 text-center text-sm font-medium uppercase tracking-widest text-neutral-500 shadow-sm">
+        Loading editor...
+      </div>
+    );
   }
 
   return (
-    <div className="max-w-4xl mx-auto pb-20">
-      <div className="mb-10 border-b border-black/10 pb-4 flex justify-between items-center">
+    <div className="mx-auto max-w-4xl pb-20">
+      <div className="mb-8 flex flex-col gap-4 border-b border-black/10 pb-6 sm:mb-10 sm:flex-row sm:items-end sm:justify-between">
         <div>
-          <h1 className="apris text-5xl text-black">Edit Post</h1>
-          <p className="text-black/60 mt-2 font-inter">Update your story for the Fola PR blog.</p>
+          <h1 className="apris text-4xl text-neutral-900 sm:text-5xl">Edit Post</h1>
+          <p className="mt-2 text-sm leading-relaxed text-neutral-600 sm:text-base">
+            Update your story for the Fola PR blog.
+          </p>
         </div>
-        <div className="flex gap-3">
+        <div className="flex flex-wrap gap-2 sm:shrink-0 sm:gap-3">
           <button
+            type="button"
             onClick={(e) => handleSubmit(e, false)}
             disabled={loading}
-            className="px-6 py-2 border border-black/20 rounded font-medium uppercase tracking-wider text-xs hover:bg-black/5"
+            className="rounded-xl border border-black/20 bg-white px-5 py-2.5 text-xs font-semibold uppercase tracking-wider text-neutral-900 shadow-sm transition-colors hover:bg-neutral-50 disabled:opacity-50"
           >
             Save as Draft
           </button>
           <button
+            type="button"
             onClick={(e) => handleSubmit(e, true)}
             disabled={loading}
-            className="px-6 py-2 border-2 border-black text-black rounded font-medium uppercase tracking-wider text-xs hover:bg-black/10"
+            className="rounded-xl border-2 border-neutral-900 bg-neutral-900 px-5 py-2.5 text-xs font-semibold uppercase tracking-wider text-[#EFE4DB] transition-colors hover:bg-neutral-800 disabled:opacity-50"
           >
             {loading ? "Saving..." : "Update & Publish"}
           </button>
         </div>
       </div>
 
-      <div className="space-y-8">
+      <div className="space-y-8 rounded-2xl border border-black/10 bg-white p-6 shadow-sm sm:p-8">
         <div>
-          <label className="block text-xs font-semibold uppercase tracking-widest text-black/70 mb-2">Title</label>
+          <label className={adminLabelClass}>Title</label>
           <input
             type="text"
             value={title}
             onChange={(e) => setTitle(e.target.value)}
-            className="w-full bg-white/50 border border-black/10 rounded-lg px-4 py-3 text-lg focus:outline-none focus:ring-1 focus:ring-black/30"
+            className={`${adminInputClass} text-lg sm:text-xl`}
             placeholder="E.g., The Future of African Luxury"
             required
           />
         </div>
 
         <div>
-           <label className="block text-xs font-semibold uppercase tracking-widest text-black/70 mb-2">Excerpt</label>
-           <textarea
-             value={excerpt}
-             onChange={(e) => setExcerpt(e.target.value)}
-             className="w-full bg-white/50 border border-black/10 rounded-lg px-4 py-3 focus:outline-none focus:ring-1 focus:ring-black/30 min-h-[100px]"
-             placeholder="A short summary of the article..."
-           />
+          <label className={adminLabelClass}>Excerpt</label>
+          <textarea
+            value={excerpt}
+            onChange={(e) => setExcerpt(e.target.value)}
+            className={adminTextareaClass}
+            placeholder="A short summary of the article..."
+          />
         </div>
 
         <div>
-          <label className="block text-xs font-semibold uppercase tracking-widest text-black/70 mb-2">Cover Image</label>
+          <label className={adminLabelClass}>Cover Image</label>
           {coverImage ? (
             <div className="relative rounded-lg overflow-hidden border border-black/10 inline-block">
               <img src={coverImage} alt="Cover" className="h-48 w-auto object-cover" />
@@ -152,7 +161,7 @@ export default function EditBlogPost() {
         </div>
 
         <div>
-          <label className="block text-xs font-semibold uppercase tracking-widest text-black/70 mb-2">Content</label>
+          <label className={adminLabelClass}>Content</label>
           <RichTextEditor content={content} onChange={setContent} />
         </div>
       </div>

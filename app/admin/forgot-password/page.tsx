@@ -5,6 +5,7 @@ import Link from "next/link";
 import { sendPasswordResetEmail } from "firebase/auth";
 import { auth } from "@/lib/firebase";
 import { isAllowedEmail } from "@/lib/auth-context";
+import { adminInputClass, adminLabelClass } from "@/components/admin/form-classes";
 
 export default function ForgotPasswordPage() {
   const [email, setEmail] = useState("");
@@ -38,43 +39,46 @@ export default function ForgotPasswordPage() {
   };
 
   return (
-    <div className="min-h-screen bg-[#EFE4DB] flex items-center justify-center px-4">
+    <div className="min-h-screen bg-gradient-to-b from-[#f7efe6] to-[#EFE4DB] flex items-center justify-center px-4 py-12">
       <div className="w-full max-w-md">
-        {/* Brand */}
-        <div className="text-center mb-10">
-          <h1 className="apris text-5xl text-black mb-2">Fola PR</h1>
-          <p className="text-black/50 text-sm uppercase tracking-widest">Admin Portal</p>
+        <div className="mb-8 text-center">
+          <h1 className="apris mb-2 text-4xl text-neutral-900 sm:text-5xl">Fola PR</h1>
+          <p className="text-sm font-medium uppercase tracking-[0.2em] text-neutral-600">
+            Admin Portal
+          </p>
         </div>
 
-        <div className="bg-white/60 backdrop-blur-sm border border-black/8 rounded-2xl p-8 shadow-sm">
+        <div className="rounded-2xl border border-black/10 bg-white p-8 shadow-lg shadow-black/5">
           {sent ? (
-            <div className="text-center py-4">
-              <div className="w-12 h-12 rounded-full bg-black/5 flex items-center justify-center mx-auto mb-4">
-                <svg className="w-6 h-6 text-black/60" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <div className="py-2 text-center">
+              <div className="mx-auto mb-4 flex h-14 w-14 items-center justify-center rounded-full border border-black/10 bg-[#EFE4DB]/80">
+                <svg className="h-7 w-7 text-neutral-700" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                 </svg>
               </div>
-              <h2 className="text-xl font-semibold text-black mb-2">Check your inbox</h2>
-              <p className="text-black/50 text-sm">
-                If an account exists for <span className="text-black font-medium">{email}</span>, you will receive a password reset link shortly.
+              <h2 className="text-xl font-semibold text-neutral-900">Check your inbox</h2>
+              <p className="mt-2 text-sm leading-relaxed text-neutral-600">
+                If an account exists for{" "}
+                <span className="font-semibold text-neutral-900">{email}</span>, you will receive a
+                password reset link shortly.
               </p>
               <Link
                 href="/admin/login"
-                className="inline-block mt-6 text-sm text-black underline underline-offset-2 hover:opacity-70"
+                className="mt-6 inline-block text-sm font-semibold text-neutral-900 underline underline-offset-2 hover:text-neutral-700"
               >
                 Back to Sign In
               </Link>
             </div>
           ) : (
             <>
-              <h2 className="text-xl font-semibold text-black mb-1">Reset Password</h2>
-              <p className="text-black/50 text-sm mb-6">
+              <h2 className="text-xl font-semibold text-neutral-900">Reset Password</h2>
+              <p className="mt-1 text-sm leading-relaxed text-neutral-600">
                 Enter your email address and we&apos;ll send you a reset link.
               </p>
 
-              <form onSubmit={handleSubmit} className="space-y-4">
+              <form onSubmit={handleSubmit} className="mt-6 space-y-5">
                 <div>
-                  <label htmlFor="reset-email" className="block text-xs font-semibold uppercase tracking-widest text-black/60 mb-1.5">
+                  <label htmlFor="reset-email" className={adminLabelClass}>
                     Email Address
                   </label>
                   <input
@@ -85,12 +89,12 @@ export default function ForgotPasswordPage() {
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
                     placeholder="you@folapr.com"
-                    className="w-full bg-white border border-black/10 rounded-lg px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-black/20 placeholder:text-black/30"
+                    className={adminInputClass}
                   />
                 </div>
 
                 {error && (
-                  <p className="text-red-600 text-sm bg-red-50 border border-red-100 rounded-lg px-4 py-3">
+                  <p className="rounded-xl border border-red-200 bg-red-50 px-4 py-3 text-sm font-medium text-red-800">
                     {error}
                   </p>
                 )}
@@ -98,7 +102,7 @@ export default function ForgotPasswordPage() {
                 <button
                   type="submit"
                   disabled={loading}
-                  className="w-full border-2 border-black text-black py-3 rounded-lg font-medium uppercase tracking-[0.1em] text-sm hover:bg-black/10 transition-colors disabled:opacity-50"
+                  className="w-full rounded-xl border-2 border-neutral-900 bg-neutral-900 py-3.5 text-sm font-semibold uppercase tracking-[0.12em] text-[#EFE4DB] transition-colors hover:bg-neutral-800 disabled:opacity-50"
                 >
                   {loading ? "Sending…" : "Send Reset Link"}
                 </button>
@@ -108,9 +112,12 @@ export default function ForgotPasswordPage() {
         </div>
 
         {!sent && (
-          <p className="text-center text-black/40 text-sm mt-6">
+          <p className="mt-8 text-center text-sm text-neutral-600">
             Remembered it?{" "}
-            <Link href="/admin/login" className="text-black underline underline-offset-2 hover:opacity-70">
+            <Link
+              href="/admin/login"
+              className="font-semibold text-neutral-900 underline underline-offset-2 hover:text-neutral-700"
+            >
               Back to Sign In
             </Link>
           </p>

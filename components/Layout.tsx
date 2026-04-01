@@ -4,7 +4,7 @@ import { Fragment, useEffect, ReactNode } from "react";
 import { usePathname } from "next/navigation";
 import ImageView from "./ImageView";
 import { activeAnimation, initCursor } from "@/lib/utils";
-import Header from "./Header";
+import Header from "./HeaderLegacy";
 
 const headerShellClass = (pathname: string | null) =>
   pathname === "/"
@@ -12,9 +12,7 @@ const headerShellClass = (pathname: string | null) =>
     : "fixed bg-white top-0 left-0 w-full z-50";
 
 const mainShellBgClass = (pathname: string | null) =>
-  pathname === "/services" ||
-  pathname === "/contact" ||
-  pathname === "/clients"
+  pathname === "/services" || pathname === "/contact" || pathname === "/clients"
     ? "bg-[#EFE4DB]"
     : "bg-white";
 

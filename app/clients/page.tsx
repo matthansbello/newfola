@@ -237,7 +237,7 @@ const Clients = () => {
             </div>
           </div>
         </div>
-          <Footer />
+        <Footer />
       </Layout>
     </>
   );

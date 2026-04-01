@@ -55,7 +55,7 @@ export default function ImageUploader({
 
   return (
     <div className={`relative inline-block ${className || ""}`}>
-      <label className="cursor-pointer inline-flex items-center justify-center rounded-md border border-black/10 bg-white/50 px-4 py-2 text-sm font-medium text-black shadow-sm transition-colors hover:bg-white focus:outline-none disabled:opacity-50">
+      <label className="inline-flex cursor-pointer items-center justify-center rounded-xl border border-neutral-300 bg-white px-5 py-2.5 text-sm font-semibold text-neutral-900 shadow-sm transition-colors hover:bg-neutral-50 focus-within:ring-2 focus-within:ring-neutral-900/15 disabled:opacity-50">
         {isUploading ? "Uploading..." : buttonText}
         <input
           type="file"

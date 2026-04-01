@@ -6,6 +6,7 @@ import Link from "next/link";
 import { createUserWithEmailAndPassword } from "firebase/auth";
 import { auth } from "@/lib/firebase";
 import { isAllowedEmail } from "@/lib/auth-context";
+import { adminInputClass, adminLabelClass } from "@/components/admin/form-classes";
 
 export default function AdminRegisterPage() {
   const router = useRouter();
@@ -52,25 +53,26 @@ export default function AdminRegisterPage() {
   };
 
   return (
-    <div className="min-h-screen bg-[#EFE4DB] flex items-center justify-center px-4">
+    <div className="min-h-screen bg-gradient-to-b from-[#f7efe6] to-[#EFE4DB] flex items-center justify-center px-4 py-12">
       <div className="w-full max-w-md">
-        {/* Brand */}
-        <div className="text-center mb-10">
-          <h1 className="apris text-5xl text-black mb-2">Fola PR</h1>
-          <p className="text-black/50 text-sm uppercase tracking-widest">Admin Portal</p>
+        <div className="mb-8 text-center">
+          <h1 className="apris mb-2 text-4xl text-neutral-900 sm:text-5xl">Fola PR</h1>
+          <p className="text-sm font-medium uppercase tracking-[0.2em] text-neutral-600">
+            Admin Portal
+          </p>
         </div>
 
-        <div className="bg-white/60 backdrop-blur-sm border border-black/8 rounded-2xl p-8 shadow-sm">
-          <h2 className="text-xl font-semibold text-black mb-1">Create Account</h2>
-          <p className="text-black/50 text-sm mb-6">
+        <div className="rounded-2xl border border-black/10 bg-white p-8 shadow-lg shadow-black/5">
+          <h2 className="text-xl font-semibold text-neutral-900">Create Account</h2>
+          <p className="mt-1 text-sm leading-relaxed text-neutral-600">
             Registration is restricted to{" "}
-            <span className="text-black/70 font-medium">@folapr.com</span> and{" "}
-            <span className="text-black/70 font-medium">@wewantfola.com</span> addresses.
+            <span className="font-semibold text-neutral-800">@folapr.com</span> and{" "}
+            <span className="font-semibold text-neutral-800">@wewantfola.com</span> addresses.
           </p>
 
-          <form onSubmit={handleSubmit} className="space-y-4">
+          <form onSubmit={handleSubmit} className="mt-6 space-y-5">
             <div>
-              <label htmlFor="reg-email" className="block text-xs font-semibold uppercase tracking-widest text-black/60 mb-1.5">
+              <label htmlFor="reg-email" className={adminLabelClass}>
                 Email Address
               </label>
               <input
@@ -81,12 +83,12 @@ export default function AdminRegisterPage() {
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 placeholder="you@folapr.com"
-                className="w-full bg-white border border-black/10 rounded-lg px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-black/20 placeholder:text-black/30"
+                className={adminInputClass}
               />
             </div>
 
             <div>
-              <label htmlFor="reg-password" className="block text-xs font-semibold uppercase tracking-widest text-black/60 mb-1.5">
+              <label htmlFor="reg-password" className={adminLabelClass}>
                 Password
               </label>
               <input
@@ -97,12 +99,12 @@ export default function AdminRegisterPage() {
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
                 placeholder="Min. 8 characters"
-                className="w-full bg-white border border-black/10 rounded-lg px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-black/20 placeholder:text-black/30"
+                className={adminInputClass}
               />
             </div>
 
             <div>
-              <label htmlFor="reg-confirm" className="block text-xs font-semibold uppercase tracking-widest text-black/60 mb-1.5">
+              <label htmlFor="reg-confirm" className={adminLabelClass}>
                 Confirm Password
               </label>
               <input
@@ -113,12 +115,12 @@ export default function AdminRegisterPage() {
                 value={confirm}
                 onChange={(e) => setConfirm(e.target.value)}
                 placeholder="Repeat your password"
-                className="w-full bg-white border border-black/10 rounded-lg px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-black/20 placeholder:text-black/30"
+                className={adminInputClass}
               />
             </div>
 
             {error && (
-              <p className="text-red-600 text-sm bg-red-50 border border-red-100 rounded-lg px-4 py-3">
+              <p className="rounded-xl border border-red-200 bg-red-50 px-4 py-3 text-sm font-medium text-red-800">
                 {error}
               </p>
             )}
@@ -126,16 +128,19 @@ export default function AdminRegisterPage() {
             <button
               type="submit"
               disabled={loading}
-              className="w-full border-2 border-black text-black py-3 rounded-lg font-medium uppercase tracking-[0.1em] text-sm hover:bg-black/10 transition-colors disabled:opacity-50 mt-2"
+              className="mt-2 w-full rounded-xl border-2 border-neutral-900 bg-neutral-900 py-3.5 text-sm font-semibold uppercase tracking-[0.12em] text-[#EFE4DB] transition-colors hover:bg-neutral-800 disabled:opacity-50"
             >
               {loading ? "Creating account…" : "Create Account"}
             </button>
           </form>
         </div>
 
-        <p className="text-center text-black/40 text-sm mt-6">
+        <p className="mt-8 text-center text-sm text-neutral-600">
           Already have an account?{" "}
-          <Link href="/admin/login" className="text-black underline underline-offset-2 hover:opacity-70">
+          <Link
+            href="/admin/login"
+            className="font-semibold text-neutral-900 underline underline-offset-2 hover:text-neutral-700"
+          >
             Sign In
           </Link>
         </p>

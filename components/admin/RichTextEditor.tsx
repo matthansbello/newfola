@@ -33,10 +33,10 @@ const ToolbarButton = ({
       onClick();
     }}
     title={title}
-    className={`p-2 rounded text-sm transition-colors ${
+    className={`rounded-md p-2 text-sm transition-colors ${
       active
-        ? "bg-black text-[#EFE4DB]"
-        : "text-black/70 hover:bg-black/10 hover:text-black"
+        ? "bg-neutral-900 text-[#EFE4DB]"
+        : "text-neutral-700 hover:bg-neutral-100 hover:text-neutral-900"
     }`}
   >
     {children}
@@ -84,9 +84,9 @@ export default function RichTextEditor({ content, onChange }: RichTextEditorProp
   };
 
   return (
-    <div className="rounded-lg border border-black/10 bg-white shadow-sm overflow-hidden">
+    <div className="overflow-hidden rounded-xl border border-neutral-300 bg-white shadow-sm">
       {/* Toolbar */}
-      <div className="flex flex-wrap items-center gap-1 border-b border-black/10 p-2 bg-[#EFE4DB]/50">
+      <div className="flex flex-wrap items-center gap-1 border-b border-black/10 bg-[#f5ebe3]/90 p-2">
         <ToolbarButton onClick={() => exec("bold")} title="Bold">
           <FiBold />
         </ToolbarButton>
@@ -120,12 +120,12 @@ export default function RichTextEditor({ content, onChange }: RichTextEditorProp
         suppressContentEditableWarning
         onInput={handleInput}
         className={[
-          "focus:outline-none min-h-[240px] p-5 text-black text-[0.95rem] leading-relaxed",
+          "min-h-[280px] p-5 text-[0.95rem] font-normal leading-relaxed text-neutral-900 focus:outline-none",
           "[&_p]:mb-4",
-          "[&_h2]:text-3xl [&_h2]:tracking-wider [&_h2]:mb-4 [&_h2]:mt-6",
-          "[&_ul]:list-disc [&_ul]:pl-6 [&_ul]:mb-4",
-          "[&_ol]:list-decimal [&_ol]:pl-6 [&_ol]:mb-4",
-          "[&_a]:underline [&_a]:text-black/70",
+          "[&_h2]:mt-6 [&_h2]:mb-4 [&_h2]:text-3xl [&_h2]:tracking-wide [&_h2]:text-neutral-900",
+          "[&_ul]:mb-4 [&_ul]:list-disc [&_ul]:pl-6",
+          "[&_ol]:mb-4 [&_ol]:list-decimal [&_ol]:pl-6",
+          "[&_a]:text-neutral-800 [&_a]:underline",
           "[&_strong]:font-semibold",
         ].join(" ")}
         data-placeholder="Start writing your story..."
@@ -134,7 +134,7 @@ export default function RichTextEditor({ content, onChange }: RichTextEditorProp
       <style>{`
         [contenteditable]:empty:before {
           content: attr(data-placeholder);
-          color: rgba(0,0,0,0.3);
+          color: rgb(82 82 91);
           pointer-events: none;
         }
         [contenteditable] h2 {

@@ -6,7 +6,7 @@ const Contact = () => {
   return (
     <>
       <Layout>
-        <div className="min-h-screen bg-[#EFE4DB] pb-10 pt-[140px] text-black overflow-auto md:overflow-hidden lg:pt-[220px]">
+        <div className="min-h-screen bg-[#EFE4DB] pb-10 pt-[220px] text-black overflow-auto md:overflow-hidden lg:pt-[320px]">
           <div className="container mx-auto flex h-screen w-full flex-col items-start justify-center gap-[30px] lg:flex-row lg:items-center lg:justify-start lg:gap-[120px] lg:pt-8">
             <div className="hidden lg:block lg:w-[45%] h-screen">
               <img

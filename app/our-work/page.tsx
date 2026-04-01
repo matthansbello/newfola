@@ -189,7 +189,7 @@ const OurWork = () => {
   return (
     <>
       <Layout>
-        <div className="min-h-screen bg-[#EFE4DB] px-5 pb-20 pt-[140px] text-black sm:px-8 lg:px-10 lg:pt-[220px]">
+        <div className="min-h-screen bg-[#EFE4DB] px-5 pb-20 pt-[220px] text-black sm:px-8 lg:px-10 lg:pt-[320px]">
           <div className="mx-auto max-w-[1800px]">
             <div className="flex flex-col gap-10 font-normal lg:flex-row lg:items-start lg:justify-between lg:gap-16">
               <div className="shrink-0 lg:w-[28%]">

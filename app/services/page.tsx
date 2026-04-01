@@ -48,7 +48,7 @@ const Services = () => {
   return (
     <>
       <Layout>
-        <div className="bg-[#EFE4DB]">
+        <div className="bg-[#EFE4DB] pt-[220px] lg:pt-[220px]">
           <div className="wrapper relative w-full min-h-screen h-screen flex justify-start items-end z-20">
             <div className="bg-[#00000033] absolute w-full h-full z-10" />
             <div className="max-w-[1800px] w-full h-full px-5 md:px-10 mx-auto text-white z-20 pb-[100px] md:pb-[150px] relative">

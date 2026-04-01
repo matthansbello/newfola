@@ -35,7 +35,7 @@ const About = () => {
 
   return (
     <Layout>
-      <div className="min-h-screen w-full max-w-screen overflow-x-hidden bg-[#EFE4DB] pt-[140px] lg:pt-[220px]">
+      <div className="min-h-screen w-full max-w-screen overflow-x-hidden bg-[#EFE4DB] pt-[280px] lg:pt-[320px]">
         {/* Hero */}
         <motion.section
           className="mx-auto max-w-[1800px] px-4 pb-12 text-black sm:px-8 sm:pb-16 lg:px-10 lg:pb-20"
@@ -104,7 +104,10 @@ const About = () => {
               <motion.p variants={fadeInUp} className={missionLabelClass}>
                 Who we are
               </motion.p>
-              <motion.div variants={fadeInUp} className="min-w-0 max-w-full lg:max-w-[56rem]">
+              <motion.div
+                variants={fadeInUp}
+                className="min-w-0 max-w-full lg:max-w-[56rem]"
+              >
                 <p className={missionBodyClass}>
                   We are strategic, bold, and unapologetically creative.
                 </p>
