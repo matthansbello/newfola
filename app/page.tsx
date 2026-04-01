@@ -5,7 +5,8 @@ import Image from "next/image";
 import { useState, useEffect } from "react";
 
 const HOME_IMAGES = [
-  "/slider2.png",
+  "/fola-home2.webp",
+  "/fola-home1.webp",
   "/AndreaIyamah/WeWantFola-Project-Andrea1.webp",
   "/kenny/kenny-by-folapr6.jpg",
   "/AndreaIyamah/WeWantFola-Project-Andrea5.webp",
