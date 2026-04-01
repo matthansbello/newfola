@@ -13,7 +13,7 @@ interface MultiImageUploaderProps {
 export default function MultiImageUploader({
   images,
   onChange,
-  label = "Gallery Images",
+  label = "Our work Images",
 }: MultiImageUploaderProps) {
 
   const handleImageAdded = (url: string) => {
@@ -42,7 +42,7 @@ export default function MultiImageUploader({
         <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4 bg-white/50 border border-black/10 rounded-lg p-4">
           {images.map((url, i) => (
             <div key={`${url}-${i}`} className="relative group aspect-square rounded-md overflow-hidden bg-black/5 border border-black/5">
-              <img src={url} alt={`Gallery ${i}`} className="w-full h-full object-cover" />
+              <img src={url} alt={`Photo ${i}`} className="w-full h-full object-cover" />
               <button
                 type="button"
                 onClick={() => handleRemove(url)}
@@ -56,7 +56,7 @@ export default function MultiImageUploader({
         </div>
       ) : (
         <div className="bg-white/50 border border-dashed border-black/20 rounded-lg p-8 flex flex-col items-center justify-center text-center hover:bg-white/70 transition-colors">
-          <p className="text-black/50 text-sm mb-2">No images added to gallery yet.</p>
+          <p className="text-black/50 text-sm mb-2">No images added to our work yet.</p>
           <p className="text-black/40 text-xs">Use the button above to upload images.</p>
         </div>
       )}

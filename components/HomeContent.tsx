@@ -6,7 +6,7 @@ import { motion, AnimatePresence } from "framer-motion";
 const images = [
   "/assets/images/new/WeWantFola-Loader.webp",
   "/assets/images/new/WeWantFola-Loader2.webp",
-  "/assets/images/new/WeWantFola-Gallery4.webp",
+  "/assets/images/new/WeWantFola-Our-Work4.webp",
   "/assets/images/new/blackimage.webp",
   "/assets/images/new/blackimage.webp",
 ];

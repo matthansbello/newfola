@@ -66,10 +66,10 @@ export default function ProjectDetails() {
           <div className="container mx-auto">
             <div className="w-full pt-[140px] lg:pt-[220px]">
               <Link
-                href="/gallery"
+                href="/our-work"
                 className="lg:px-[100px] uppercase font-inter lg:text-lg"
               >
-                Back to Gallery
+                Back to Our work
               </Link>
             </div>
 

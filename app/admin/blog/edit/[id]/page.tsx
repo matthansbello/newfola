@@ -17,7 +17,7 @@ export default function EditBlogPost() {
   const [excerpt, setExcerpt] = useState("");
   const [content, setContent] = useState("");
   const [coverImage, setCoverImage] = useState("");
-  const [galleryImages, setGalleryImages] = useState<string[]>([]);
+  const [ourWorkImages, setOurWorkImages] = useState<string[]>([]);
   const [loading, setLoading] = useState(false);
   const [fetching, setFetching] = useState(true);
 
@@ -34,7 +34,7 @@ export default function EditBlogPost() {
           setExcerpt(data.excerpt || "");
           setContent(data.content || "");
           setCoverImage(data.coverImage || "");
-          setGalleryImages(data.galleryImages || []);
+          setOurWorkImages(data.galleryImages || []);
         } else {
           alert("No such document!");
           router.push("/admin/blog");
@@ -64,7 +64,7 @@ export default function EditBlogPost() {
         excerpt,
         content,
         coverImage,
-        galleryImages,
+        galleryImages: ourWorkImages,
         published,
         updatedAt: serverTimestamp(),
       });
@@ -148,7 +148,7 @@ export default function EditBlogPost() {
         </div>
 
         <div>
-           <MultiImageUploader images={galleryImages} onChange={setGalleryImages} />
+           <MultiImageUploader images={ourWorkImages} onChange={setOurWorkImages} />
         </div>
 
         <div>

@@ -92,7 +92,7 @@ export const jsTestimonials = {
   },
 };
 
-export const mGalleryCarousel = {
+export const ourWorkCarousel = {
   slidesPerView: "auto" as const,
   spaceBetween: 100,
   speed: 700,

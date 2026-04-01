@@ -7,7 +7,7 @@ import { useEffect, useRef, useState } from "react";
 const MENU_LINKS = [
   { label: "Home", href: "/" },
   { label: "About Us", href: "/about" },
-  { label: "Gallery", href: "/gallery" },
+  { label: "Our work", href: "/our-work" },
   { label: "Services", href: "/services" },
   { label: "Clients", href: "/clients" },
   { label: "Contact", href: "/contact" },
@@ -19,8 +19,8 @@ const labelForPath = (pathname: string | null) => {
       return "Home";
     case "/about":
       return "About";
-    case "/gallery":
-      return "Gallery";
+    case "/our-work":
+      return "Our work";
     case "/services":
       return "Services";
     case "/clients":

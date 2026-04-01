@@ -14,7 +14,7 @@ export default function NewBlogPost() {
   const [excerpt, setExcerpt] = useState("");
   const [content, setContent] = useState("");
   const [coverImage, setCoverImage] = useState("");
-  const [galleryImages, setGalleryImages] = useState<string[]>([]);
+  const [ourWorkImages, setOurWorkImages] = useState<string[]>([]);
   const [loading, setLoading] = useState(false);
 
   const handleSubmit = async (e: React.FormEvent, published: boolean) => {
@@ -31,7 +31,7 @@ export default function NewBlogPost() {
         excerpt,
         content,
         coverImage,
-        galleryImages,
+        galleryImages: ourWorkImages,
         published,
         createdAt: serverTimestamp(),
       });
@@ -111,7 +111,7 @@ export default function NewBlogPost() {
         </div>
 
         <div>
-           <MultiImageUploader images={galleryImages} onChange={setGalleryImages} />
+           <MultiImageUploader images={ourWorkImages} onChange={setOurWorkImages} />
         </div>
 
         <div>

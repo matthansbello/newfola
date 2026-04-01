@@ -65,7 +65,7 @@ const About = () => {
             className="mt-8 w-full overflow-hidden rounded-sm sm:mt-12 lg:mt-14 lg:rounded-none"
           >
             <img
-              src="/assets/images/new/WeWantFola-Gallery2.webp"
+              src="/assets/images/new/WeWantFola-Our-Work2.webp"
               alt="FOLA PR team in the studio"
               className="aspect-[16/10] h-auto w-full object-cover sm:aspect-auto"
               width={1600}
