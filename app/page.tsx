@@ -19,12 +19,7 @@ type HeroSlide = {
 };
 
 const heroSlides: HeroSlide[] = [
-  {
-    id: 0,
-    image: "newBg.png",
-    imageMobile: "newBg-mobile.png",
-    color: "dark",
-  },
+  
   {
     id: 1,
     image: "assets/images/home/FOLA-home-6.webp",
