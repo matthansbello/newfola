@@ -75,7 +75,7 @@ export default function OurWorkPage() {
 
   return (
     <Layout>
-      <div className="min-h-screen bg-[#EFE4DB] pt-[280px] text-black lg:pt-[320px]">
+      <div className="min-h-screen bg-[#EFE4DB] text-black pt-[120px] lg:pt-[220px]">
         <section className="mx-auto max-w-[1800px] px-5 pb-16 sm:px-8 sm:pb-20 lg:px-12 lg:pb-24">
           <header className="mb-12 sm:mb-16 lg:mb-20">
             <h1 className="apris m-0 text-[clamp(2.5rem,6vw,4.5rem)] font-medium uppercase tracking-[0.02em] text-neutral-900">

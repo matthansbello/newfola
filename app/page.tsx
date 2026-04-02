@@ -112,12 +112,12 @@ const Index = () => {
                   >
                     <span className="lg:flex hidden flex-col items-center gap-1 lg:gap-2">
                       <FadingText
-                        text="Elevating African Creativity"
+                        text="Elevating African"
                         style="scale"
                         className="apris text-[1.65rem] font-medium leading-[1.12] tracking-[-0.04em] text-white sm:text-4xl md:text-5xl lg:text-[3rem] lg:leading-[1.08] xl:text-[50px]"
                       />
                       <FadingText
-                        text="to the Global Stage."
+                        text="Creativity to the Global Stage."
                         style="scale"
                         className="apris text-[1.65rem] font-medium leading-[1.12] tracking-[-0.04em] text-white sm:text-4xl md:text-5xl lg:text-[3rem] lg:leading-[1.08] xl:text-[50px]"
                       />

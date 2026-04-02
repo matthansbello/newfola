@@ -4,7 +4,7 @@ import { Fragment, useEffect, ReactNode } from "react";
 import { usePathname } from "next/navigation";
 import ImageView from "./ImageView";
 import { activeAnimation, initCursor } from "@/lib/utils";
-import Header from "./HeaderLegacy";
+import Header from "./Header";
 
 const headerShellClass = (pathname: string | null) =>
   pathname === "/"

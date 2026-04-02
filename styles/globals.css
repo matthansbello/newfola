@@ -13,12 +13,12 @@ a {
   text-decoration-color: transparent;
 }
 
-a:hover {
+/* a:hover {
   color: #C8A882 !important;
   text-decoration: underline;
   text-decoration-color: #C8A882;
   text-underline-offset: 3px;
-}
+} */
 
 /* Hide scrollbar globally */
 ::-webkit-scrollbar {

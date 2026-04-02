@@ -35,7 +35,7 @@ const About = () => {
 
   return (
     <Layout>
-      <div className="min-h-screen w-full max-w-screen overflow-x-hidden bg-[#EFE4DB] pt-[280px] lg:pt-[320px]">
+      <div className="min-h-screen w-full max-w-screen overflow-x-hidden bg-[#EFE4DB] pt-[120px] lg:pt-[220px]">
         {/* Hero */}
         <motion.section
           className="mx-auto max-w-[1800px] px-4 pb-12 text-black sm:px-8 sm:pb-16 lg:px-10 lg:pb-20"
