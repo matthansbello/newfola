@@ -73,7 +73,7 @@ export default function Header() {
           <span
             className={`inline-flex select-none items-center gap-2 px-0 py-1 font-inter text-[11px] lg:text-[20px] font-semibold uppercase tracking-[0.18em] backdrop-blur-sm transition-opacity hover:opacity-90 ${barTextClass}`}
           >
-            (MENU)
+            MENU
           </span>
         </summary>
 

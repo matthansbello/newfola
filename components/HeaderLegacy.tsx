@@ -203,7 +203,7 @@ export default function HeaderLegacy() {
                 <p
                   className={`mb-3  text-xs font-semibold text-[10px] uppercase tracking-[0.2em] ${editorialMuted}`}
                 >
-                  (MENU)
+                  MENU
                 </p>
                 <nav
                   className={`flex flex-col gap-2 font-inter text-xs font-normal uppercase tracking-[0.12em] leading-[13px] ${editorialNavMuted}`}
