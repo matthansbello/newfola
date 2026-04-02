@@ -140,11 +140,6 @@ const clients: Client[] = [
     logo: "/assets/images/clients/gitexx.png",
   },
   {
-    name: "htl",
-    category: "Music & Entertainment",
-    logo: "/assets/images/clients/htl.png",
-  },
-  {
     name: "Nahous",
     category: "Music & Entertainment",
     logo: "/assets/images/clients/Nahous.png",
@@ -164,11 +159,7 @@ const clients: Client[] = [
     category: "Art & Culture",
     logo: "/assets/images/clients/youtube.png",
   },
-  {
-    name: "victony",
-    category: "Art & Culture",
-    logo: "/assets/images/clients/fola-client-12.svg",
-  },
+  
 ];
 
 const Clients = () => {
