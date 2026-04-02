@@ -110,11 +110,11 @@ const FadingText: React.FC<FadingTextProps> = ({
             <motion.span
               key={i}
               initial={variant.initial}
-              animate={hasAnimated ? variant.animate : variant.initial}
+              animate={variant.animate}
               transition={{
                 duration: variant.transition?.duration || 0.4,
                 ease: (variant.transition?.ease as any) || "easeOut",
-                delay: (variant.transition?.delay || 0) + i * staggerDelay, // 👈 delay applied per character
+                delay: i * staggerDelay, // 👈 delay applied per character relative to start
               }}
               className="inline-block"
               style={fontFamily ? { fontFamily } : undefined}
