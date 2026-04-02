@@ -11,7 +11,6 @@ const MISSION =
 const MENU_LINKS = [
   { label: "About Us", href: "/about" },
   { label: "Our work", href: "/our-work" },
-  { label: "Archive", href: "/blog" },
   { label: "Service", href: "/services" },
   { label: "Our Clients", href: "/clients" },
   { label: "Contact Us", href: "/contact" },

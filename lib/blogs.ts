@@ -83,5 +83,5 @@ export async function getPublishedBlogBySlug(
 
 export function blogHref(post: Pick<PublicBlogPost, "slug" | "id">): string {
   const segment = post.slug || post.id;
-  return `/blog/${encodeURIComponent(segment)}`;
+  return `/our-work/${encodeURIComponent(segment)}`;
 }
